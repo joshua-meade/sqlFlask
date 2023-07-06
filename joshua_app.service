@@ -1,0 +1,12 @@
+[Unit]
+Description=uWSGI instance for Joshua training App
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/training/joshua_app/sqlFlask
+Environment="PATH=/home/ubuntu/training/joshua-app/sqlFlask/venv/bin"
+ExecStart=/home/ubuntu/training/joshua-app/sqlFlask/venv/bin/uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target
